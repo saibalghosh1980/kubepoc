@@ -31,8 +31,8 @@ spec:
     spec:
       containers:
       - name: dev-pod-kubepoc
-        image: devintegrationsdccr.azurecr.io/dev-kubepoc
-      imagePullSecrets:
-      - name: regcred
+        image: devintegrationsdccr.azurecr.io/dev-kubepoc      
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
