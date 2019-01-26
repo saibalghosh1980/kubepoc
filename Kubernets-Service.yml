@@ -11,26 +11,26 @@ spec:
     targetPort: 8080
   type: NodePort
   selector:
-    app: pod-kubepoc
+    app: container-kubepoc
     targetEnvironment: dev
 ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: dev-replication-controller-kubepoc
+  name: dev-pod-kubepoc
   labels:
-    app: repl-ctrl-kubepoc
+    app: pod-kubepoc
     targetEnvironment: dev
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: pod-kubepoc
+        app: container-kubepoc
         targetEnvironment: dev
     spec:
       containers:
-      - name: dev-pod-kubepoc
+      - name: dev-conatiner-kubepoc
         image: devintegrationsdccr.azurecr.io/dev-kubepoc      
         ports:
         - containerPort: 8080
