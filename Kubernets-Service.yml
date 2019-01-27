@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: dev-svc-kubepoc
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
   labels:
     app: svc-kubepoc
     targetEnvironment: dev
@@ -9,7 +11,7 @@ spec:
   ports:
   - port: 8080
     targetPort: 8080
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: container-kubepoc
     targetEnvironment: dev
