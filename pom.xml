@@ -68,7 +68,7 @@
 							<name>${docker-image-name}</name>
 							<alias>${build-profile}-${docker-image-name}</alias>
 							<build>
-								<from>devintegrationsdccr.azurecr.io/ibmspringbootazure</from>
+								<from>gboxfjnkprd01.uk.oup.com:9443/springboot/ibmspringboot</from>
 								<!-- This is the same ENTRYPOINT used in a Dockerfile -->
 								<entryPoint>
 									<exec>
